@@ -22,9 +22,10 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const posts = [];
 
 //render ejs page 
+//show new posts in home page
 app.get("/", (req,res)=>{
- res.render("home" , { home : homeStartingContent });
- console.log(posts);
+ res.render("home" , { home : homeStartingContent, post: posts });
+//  console.log(posts);
 });
 
 app.get("/about", (req,res)=>{

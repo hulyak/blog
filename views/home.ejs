@@ -2,4 +2,17 @@
 <h1>Home</h1>
 <!-- render ejs -->
 <p><%= home %></p>
+<!-- http://perkframework.com/v1/guides/creating-a-dynamic-view-with-ejs.html -->
+ <!-- for(let i = 0 ; i < post.length ; i++){ 
+ console.log(post[i].title)
+  }  -->
+<!-- loop over post array , post is the variable from this ejs file, server side corresponds to posts array  -->
+<% post.forEach(function(postItem){%>
+  <h1><%= postItem.title %></h1>
+  <p><%= postItem.content %></p>
+<!-- console.log(postItem.title) -->
+<% })%>
+
 <%- include("./partials/footer"); -%> 
+
+<!-- use scriplet tags for javascript only not html -->
