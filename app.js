@@ -3,7 +3,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
+// Load the full build.
+const _ = require('lodash');
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -24,7 +25,10 @@ const posts = [];
 //render ejs page 
 //show new posts in home page
 app.get("/", (req,res)=>{
- res.render("home" , { home : homeStartingContent, post: posts });
+ res.render("home" , { 
+   home : homeStartingContent,
+   post: posts 
+  });
 //  console.log(posts);
 });
 
@@ -46,6 +50,7 @@ app.get("/about", (req,res)=>{
      title : req.body.postTitle,
      content : req.body.postContent
    };
+   //push to posts array
    posts.push(post);
   // go back to home route 
    res.redirect("/");
@@ -58,12 +63,20 @@ app.get("/about", (req,res)=>{
 // });
 // localhost:3000/news/politics  // topic parameter can change 
 
+// use lodash(lowercase) to use lowercase paths in localhost 
+ // transfrom user's  format to lowercase
 app.get("/posts/:blog" , (req, res) => {
-  const requestedTitle = req.params.blog ; 
+  const requestedTitle = _.lowerCase(req.params.blog) ; 
   //loop through the array to get dynamic information for each individual post
   posts.forEach(function(post){
-    if(post.title === requestedTitle){
-      console.log("Match found!");
+    const storedTitle = _.lowerCase(post.title);
+    if (storedTitle === requestedTitle){
+      // console.log("Match found!");
+      //this will render every blog post in its own page 
+      res.render("post", 
+      {title : post.title,
+       content : post.content
+      });
     }
   });
 });
