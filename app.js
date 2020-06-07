@@ -21,7 +21,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 
 //posts array for compose page (posts is an array of obejcts)
 const posts = [];
-const length = 100;
+
 //render ejs page 
 //show new posts in home page
 app.get("/", (req,res)=>{
