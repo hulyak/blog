@@ -1,14 +1,14 @@
-# Blog Website Using Express, EJS and Lodash 
 
 ## Table of contents
+- [Table of contents](#table-of-contents)
 - [Blog Website Using Express, EJS and Lodash](#blog-website-using-express-ejs-and-lodash)
-  - [Table of contents](#table-of-contents)
-  - [General info](#general-info)
-  - [Requirements](#requirements)
-  - [Technologies Used](#technologies-used)
-  - [Set Up](#set-up)
+- [Requirements](#requirements)
+- [Technologies Used](#technologies-used)
+- [Set Up](#set-up)
 
-## General info 
+
+
+## Blog Website Using Express, EJS and Lodash 
 
 This project uses partials to build a cohesive whole website. It has a home page, about us page , contact us page. Home page stores the new blog posts in chronological order but the actual blog content will be truncated to only 100 characters. When you click on read more, it will take you to an individual page of each of your blog posts and you can read them independently on a single page.
 
