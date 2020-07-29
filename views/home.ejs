@@ -1,22 +1,22 @@
-<%- include("./partials/header"); -%> 
+<%- include("partials/header"); -%> 
 <h1>Home</h1>
 <!-- render ejs -->
-<p><%= home %></p>
+<p><%= startingContent %></p>
 <!-- http://perkframework.com/v1/guides/creating-a-dynamic-view-with-ejs.html -->
  <!-- for(let i = 0 ; i < post.length ; i++){ 
  console.log(post[i].title)
   }  -->
 <!-- loop over post array , post is the variable from this ejs file, server side corresponds to posts array  -->
-<% post.forEach(function(postItem){%>
-  <h1><%= postItem.title %></h1>
+<% posts.forEach(function(post){%>
+  <h1><%= post.title %></h1>
   <!-- truncate home page posts to 100 characters appended with ... -->
-  <p><%= postItem.content.substring(0,100) + "..." %>
+  <p><%= post.content.substring(0,100) + "..." %>
     <!-- title of the post takes us to /posts/titleName -->
-  <a href="/posts/<%= postItem.title %>">Read More</a>
+  <a href="/posts/<%= post._id %>">Read More</a>
   </p>
 <!-- console.log(postItem.title) -->
 <% })%>
 
-<%- include("./partials/footer"); -%> 
+<%- include("partials/footer"); -%> 
 
 <!-- use scriplet tags for javascript only not html -->
