@@ -22,7 +22,7 @@ You need node and npm installed in your environment. `npm install` to install de
 
 ## Technologies Used
 
-Epress, Lodash, and ejs templating.
+Epress, Lodash, Mongoose and ejs templating.
 
 ## Set Up
 
